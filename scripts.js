@@ -18,20 +18,17 @@ canvas.width = 500;
 canvas.height = 500;
 const canvasRadius = canvas.width / 2;
 
-// Couleurs de Noël
+// Couleurs de Noël adaptées pour du texte blanc
 const christmasColors = [
-    "#FF0000", // Rouge vif
-    "#00A550", // Vert sapin
-    "#FFD700", // Or
-    "#8B0000", // Rouge foncé
-    "#006400", // Vert foncé
-    "#4B0082", // Indigo
-    "#8B4513", // Brun terre
-    "#2F4F4F", // Gris foncé
-    "#1C1C1C", // Noir presque pur
-    "#800080", // Violet foncé
-    "#556B2F", // Vert olive foncé
-  ];
+  "#D40000", 
+  "#316226", 
+  "#A6C33C", 
+  "#60992E", 
+  "#0A551D",
+  "#433123",
+  "#57402F",
+];
+
 
 // Dessiner la roue
 function drawWheel(names, rotationAngle = 0, winningAngle = null) {
@@ -53,14 +50,31 @@ function drawWheel(names, rotationAngle = 0, winningAngle = null) {
     ctx.fillStyle = christmasColors[i % christmasColors.length];
     ctx.fill();
 
+    // Ajouter une bordure rouge de 4px
+    ctx.lineWidth = 4; // Épaisseur de la bordure
+    ctx.strokeStyle = "#e63946"; // Couleur rouge
+    ctx.stroke(); // Appliquer le contour
+
+    // Ajouter un point au centre
+    ctx.save();
+    ctx.fillStyle = "white"; // Couleur du gros point
+    ctx.beginPath();
+    ctx.arc(0, 0, 20, 0, 2 * Math.PI); // Positionner le gros point à l'angle de détection
+    ctx.fill();
+    ctx.lineWidth = 6; // Épaisseur de la bordure
+    ctx.strokeStyle = "#e63946"; // Couleur rouge
+    ctx.stroke(); // Appliquer le contour
+    ctx.restore();
+    
+
     // Ajouter les textes dans le sens du rayon
     ctx.save();
     const angle = i * segmentAngle + segmentAngle / 2;
     ctx.rotate(angle); // Tourner pour aligner le texte avec le segment
-    ctx.translate(canvasRadius / 2, 0); // Positionner le texte radialement
+    ctx.translate(canvasRadius / 1.7, 0); // Positionner le texte radialement
     ctx.rotate(Math.PI); // Faire face au centre
-    ctx.fillStyle = "#FFF";
-    ctx.font = "14px Arial";
+    ctx.fillStyle = "#FDFADD";
+    ctx.font = "14px cursive";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText(names[i] || "", 0, 0);

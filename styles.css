@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: cursive;
     margin: 0;
     padding: 0;
     display: flex;
@@ -41,11 +41,11 @@ body::before {
 }
 
 #wheel {
-    border: 5px solid #116530; /* Vert sapin */
+    border: 5px solid #e63946; /* Vert sapin */
     border-radius: 50%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, #e63946, #b22222); /* Dégradé rouge pour évoquer Noël */
+    background: #e63946; /* rouge pour évoquer Noël */
 }
 
 .footer {
@@ -74,20 +74,22 @@ body::before {
     height: 400px;
     resize: none;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #FDFADD;
     border-radius: 5px;
-    background-color: #ffffff; /* Fond blanc */
-    color: #333; /* Texte gris foncé */
+    background-color: #8D010A; /* Fond blanc */
+    color: #FDFADD; /* Texte gris foncé */
+    font-family: cursive;
 }
 
 #drawButton {
     padding: 10px;
     background-color: #e63946; /* Rouge de Noël */
-    color: white;
+    color: #FDFADD;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: cursive;
 }
 
 #drawButton:hover {
