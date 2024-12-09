@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative; /* Nécessaire pour le pseudo-élément */
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 120%;
+    margin-top: -5%;
+    margin-left: -5%;
+    background: url('./fond.jpg') no-repeat center center/cover;
+    filter: blur(4px); /* Applique le flou uniquement à l'image de fond */
+    z-index: -1; /* Place l'image derrière le contenu */
+}
+
+.header {
+    position: absolute;
+    top: 10px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative; /* Assure que le contenu est au-dessus du fond */
+    z-index: 1;
+}
+
+.wheel-container {
+    position: relative;
+}
+
+#wheel {
+    border: 5px solid #116530; /* Vert sapin */
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #e63946, #b22222); /* Dégradé rouge pour évoquer Noël */
+}
+
+.pointer {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #f5df4d; /* Jaune doré */
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#namesInput {
+    width: 200px;
+    height: 500px;
+    resize: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff; /* Fond blanc */
+    color: #333; /* Texte gris foncé */
+}
+
+#drawButton {
+    padding: 10px;
+    background-color: #e63946; /* Rouge de Noël */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#drawButton:hover {
+    background-color: #b22222; /* Rouge plus foncé */
+}
+
+/* Modale */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h1 {
+    font-size: 24px;
+    color: #116530; /* Vert sapin */
+}
+
+/* Ajout d'ombres et d'animations */
+#wheel {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+

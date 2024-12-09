@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tirage au sort</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
+  <script src="confettis.js" defer></script>
+
+</head>
+<body>
+    <img src="header.png" class="header">
+  <div class="container">
+    <div class="wheel-container">
+      <canvas id="wheel"></canvas>
+      <div class="pointer">▼</div>
+    </div>
+    <div class="input-container">
+      <textarea id="namesInput" placeholder="Entrez les noms ici, un par ligne"></textarea>
+      <button id="drawButton">Tirage au sort</button>
+    </div>
+  </div>
+
+  <!-- Modale pour le gagnant -->
+  <div id="winnerModal" class="modal hidden">
+    <div class="modal-content">
+      <h1><span id="winnerName"></span> a gagné !</h1>
+    </div>
+  </div>
+</body>
+</html>
