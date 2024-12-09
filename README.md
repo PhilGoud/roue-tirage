@@ -1,4 +1,6 @@
 # roue-tirage
 Un mini-site avec une roue pour faire des tirages au sort
 
-![image](https://github.com/user-attachments/assets/70db9021-5a83-4b25-9554-42b99e855c97)
+![image](https://github.com/user-attachments/assets/8838ebb4-fa57-4064-9649-13f78b6fa6ef)
+
+Note : Utilisation du LocalStorage pour conserver la liste des noms
