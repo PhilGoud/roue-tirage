@@ -3,8 +3,9 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
     position: relative; /* Nécessaire pour le pseudo-élément */
     overflow: hidden;
@@ -25,8 +26,7 @@ body::before {
 }
 
 .header {
-    position: absolute;
-    top: 10px;
+    height: 100px;
 }
 
 .container {
@@ -34,7 +34,6 @@ body::before {
     align-items: center;
     gap: 20px;
     position: relative; /* Assure que le contenu est au-dessus du fond */
-    z-index: 1;
 }
 
 .wheel-container {
@@ -47,6 +46,12 @@ body::before {
     width: 500px;
     height: 500px;
     background: radial-gradient(circle, #e63946, #b22222); /* Dégradé rouge pour évoquer Noël */
+}
+
+.footer {
+    height: 50px;
+    width: 50px;
+    margin-bottom: 10px;
 }
 
 .pointer {
@@ -66,7 +71,7 @@ body::before {
 
 #namesInput {
     width: 200px;
-    height: 500px;
+    height: 400px;
     resize: none;
     padding: 10px;
     border: 1px solid #ccc;
